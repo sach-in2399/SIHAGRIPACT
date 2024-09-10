@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contract.css">
+    <title>Contract Form</title>
+</head>
+<body>
+
+<div class="contract-form-container">
+    <h1>Contract Form</h1>
+    <form id="contract-form">
+        <label for="crop">Crop Type:</label>
+        <select id="crop" name="crop" required>
+            <option value="wheat">Wheat</option>
+            <option value="rice">Rice</option>
+            <option value="corn">Corn</option>
+            <option value="vegetables">Vegetables</option>
+        </select>
+
+        <label for="quantity">Quantity (kg):</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity in kg" required>
+
+        <label for="delivery-date">Delivery Date:</label>
+        <input type="date" id="delivery-date" name="delivery-date" required>
+
+        <label for="price">Price per kg:</label>
+        <input type="number" id="price" name="price" placeholder="Enter price per kg" required>
+
+        <label for="terms">Terms and Conditions:</label>
+        <textarea id="terms" name="terms" rows="4" placeholder="Enter any specific terms and conditions" required></textarea>
+
+        <button type="submit">Create Contract</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("contract-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        // Create a FormData object to hold the form data
+        const formData = new FormData();
+
+        // Get form data and append it to the FormData object
+        const CropType = document.getElementById("crop").value;
+        const Quantity = document.getElementById("quantity").value;
+        const DeliveryDate = document.getElementById("delivery-date").value;
+        const PricePerKg = document.getElementById("price").value;
+        const TermsAndCondition = document.getElementById("terms").value;
+
+        // Append the form data to FormData object
+        formData.append('cropType', CropType);
+        formData.append('quantity', Quantity);
+        formData.append('deliveryDate', DeliveryDate);
+        formData.append('pricePerKg', PricePerKg);
+        formData.append('terms', TermsAndCondition);
+        alert("Creation of contract is successfull");
+
+        // If you have a token stored in localStorage, append it as well
+        // const token = localStorage.getItem('token');
+        // if (token) {
+        //     formData.append('token', token);
+        // }
+
+        // try {
+        //     // Make POST request to the backend API with FormData
+        //     const response = await fetch('http://localhost:4000/api/v1/BuyerMatch/createContracts', {
+        //         method: 'POST',
+        //         body: formData // Sending FormData directly
+        //     });
+
+        //     console.log("what is the response",response);
+
+        //     // Parse the response
+        //     const result = await response.json();
+        //     if (result.success) {
+        //         alert("Contract created successfully!");
+        //     } else {
+        //         alert("Error creating contract: " + result.message);
+        //     }
+        // } catch (error) {
+        //     console.error("Error:", error);
+        //     alert("Failed to create contract. Please try again.");
+        // }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Farming Advisor</title>
+    <link rel="stylesheet" href="crop.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-item">
+           <a href="../Profile/prof.html"> <img  style=" height: 50px; width: 50px;" src="profile.png" alt="Profile" class="icon"></a>
+        </div>
+        <div class="top-bar-item">
+            <img   style=" height: 50px; width: 50px;" src="notification.jpg" alt="Notification" class="icon">
+        </div>
+    </div>
+
+    <div class="welcome-message">
+        <h1>Welcome, User!</h1>
+        <p>Learn better crop farming practices with tailored advice.</p>
+        <div class="welcome-image">
+            <img src="back.webp" alt="Crop Farming">
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="crop-form">
+            <label for="season">Select Season:</label>
+            <select id="season" name="season">
+                <option value="rabi">Rabi (Winter)</option>
+                <option value="kharif">Kharif (Summer)</option>
+            </select>
+
+            <label for="crop-type">Select Crop Type:</label>
+            <select id="crop-type" name="crop-type">
+                <option value="food-grain">Food Grain</option>
+                <option value="pulses">Pulses</option>
+                <option value="oil-seeds">Oil Seeds</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="spices">Spices</option>
+            </select>
+
+            <label for="specific-crop">Select Specific Crop:</label>
+            <select id="specific-crop" name="specific-crop">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+
+            <button type="submit"><a style="color: white; text-decoration: none;" href="../Crop Prevent/crop-prevent.html">Submit</a></button>
+        </form>
+    </div>
+    
+    <script src="crop.js"></script>
+</body>
+</html>

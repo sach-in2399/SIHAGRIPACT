@@ -1,0 +1,94 @@
+body {
+     font-family: Arial, sans-serif;
+     background-color: #f4f4f9;
+     color: #333;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ header {
+     background-color: #005f23;
+     color: white;
+     padding: 20px;
+     text-align: center;
+ }
+ 
+ table {
+     width: 100%;
+     margin: 20px auto;
+     border-collapse: collapse;
+     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+     overflow-x: auto; /* Ensures table scrolls on smaller screens */
+ }
+ 
+ th, td {
+     padding: 10px;
+     text-align: center;
+     border: 1px solid #ddd;
+     font-size: 14px;
+ }
+ 
+ th {
+     background-color: #e7c883;
+ }
+ 
+ tr:nth-child(even) {
+     background-color: #f9f9f9;
+ }
+ 
+ button {
+     background-color: #28a745;
+     color: white;
+     padding: 6px 10px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 14px;
+ }
+ 
+ button:hover {
+     background-color: #218838;
+ }
+ 
+ footer {
+     text-align: center;
+     padding: 20px;
+     background-color: #005f23;
+     color: white;
+ }
+ 
+ /* Responsive styles for 360x740 (Samsung Galaxy S8+) */
+ @media only screen and (max-width: 740px) {
+     /* Set table to scroll on overflow and adjust paddings */
+     table {
+         display: block;
+         overflow-x: auto;
+         width: 100%;
+         white-space: nowrap;  /* Keep cells from breaking into new lines */
+     }
+ 
+     th, td {
+         font-size: 12px;  /* Smaller font size for smaller screens */
+         padding: 8px;
+     }
+ 
+     button {
+         font-size: 12px;
+         padding: 5px 8px;
+     }
+     
+     body {
+         padding: 0;
+         margin: 0;
+     }
+ 
+     header h1 {
+         font-size: 20px; /* Adjust header size for small screens */
+     }
+     
+     footer {
+         padding: 15px;
+         font-size: 12px;
+     }
+ }
+ 

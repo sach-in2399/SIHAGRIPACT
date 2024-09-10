@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheat Care</title>
+    <link rel="stylesheet" href="crop-prevent.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="../Dashboard/dashboard.html"><img style="width: 50px; height: 50px;" src="home.webp" alt=""></a>
+       <a href=""><img style="width: 50px; height: 50px;" src="notification.jpg" alt=""></a>
+       <a href="../Profile/prof.html"><img style="width: 50px; height: 50px;" src="profile.png" alt=""></a>
+       
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+        <div class="head">
+            <h1>Wheat</h1>
+            <img src="wheat.jpg" alt="Wheat Image" class="wheat-image">
+        </div>
+    </div>
+    <!-- form -->
+     <div class="form-head">
+    <div class="form-container">
+        <h2>Boost Wheat Production</h2>
+        <!-- <form action="#" method="post" enctype="multipart/form-data"> -->
+            <!-- Soil pH Dropdown -->
+        <form id="wheat-form" action="#" method="post" enctype="multipart/form-data">
+            <label for="soil-ph">Soil pH:</label>
+            <select id="soil-ph" name="soil-ph" required>
+                <option value="">Select Soil pH</option>
+                <option value="6.0-7.5">Optimal (6.0 - 7.5) - Best</option>
+                <option value="5.5-6.0">Moderately Acidic (5.5 - 6.0) - Good</option>
+                <option value="7.5-8.0">Slightly Alkaline (7.5 - 8.0) - Fair</option>
+                <option value="<5.5 or >8.0">Strongly Acidic or Alkaline (&lt;5.5 or &gt;8.0) - Poor</option>
+            </select>
+
+            <!-- Soil Moisture Dropdown -->
+            <label for="soil-moisture">Soil Moisture:</label>
+            <select id="soil-moisture" name="soil-moisture" required>
+                <option value="">Select Soil Moisture</option>
+                <option value="60-80%">Optimal (60% - 80%) - Best</option>
+                <option value="50-60%">Moderate (50% - 60%) - Good</option>
+                <option value="30-50%">Low (30% - 50%) - Fair</option>
+                <option value="<30% or >80%">Very Low or High (&lt;30% or &gt;80%) - Poor</option>
+            </select>
+
+            <!-- Pesticides Dropdown -->
+            <label for="pesticides">Pesticides You're Using:</label>
+            <select id="pesticides" name="pesticides" required>
+                <option value="">Select Pesticide</option>
+                <option value="Roundup">Roundup</option>
+                <option value="Fusilade">Fusilade</option>
+                <option value="Achieve">Achieve</option>
+                <option value="Caramba">Caramba</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Image Upload for Disease Detection -->
+            <label for="crop-image">Upload Crop Photo to Detect Disease:</label>
+            <input type="file" id="crop-image" name="crop-image" accept="image/*" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+  
+
+</div>
+  <!-- feedback div -->
+
+<div id="feedback" class="feedback-container" style="display: none;">
+    <h3>Feedback</h3>
+    <p id="feedback-message"></p>
+</div>
+    <script src="crop-prevent.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Negotiation Form</title>
+    <link rel="stylesheet" href="negotiation.css">
+</head>
+<body>
+
+<div class="negotiation-form-container">
+    <h1>Price Negotiation Form</h1>
+    <form id="negotiation-form">
+        <label for="crop-type">Crop Type:</label>
+        <select id="crop-type" name="crop-type" required>
+            <option value="wheat">Wheat</option>
+            <option value="rice">Rice</option>
+            <option value="corn">Corn</option>
+            <option value="vegetables">Vegetables</option>
+        </select>
+
+        <label for="initial-price">Initial Price Offered (per kg):</label>
+        <input type="number" id="initial-price" name="initial-price" placeholder="Enter initial price" required>
+
+        <label for="counter-offer">Counter Offer (per kg):</label>
+        <input type="number" id="counter-offer" name="counter-offer" placeholder="Enter your counteroffer" required>
+
+        <label for="comments">Comments/Negotiation Terms:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Include any specific negotiation terms" required></textarea>
+
+        <button type="submit">Submit Offer</button>
+    </form>
+</div>
+
+</body>
+</html>

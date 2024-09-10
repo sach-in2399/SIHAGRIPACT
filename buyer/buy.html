@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Matching</title>
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+    <header>
+        <h1>Buyer Matching</h1>
+    </header>
+
+    <section id="search-section">
+        <div class="search-bar">
+            <input type="text" placeholder="Search Buyers..." id="search">
+        </div>
+        <div class="filters">
+            <h3>Filters</h3>
+            <form id="filter-form">
+                <label for="location">Location:</label>
+                <select id="location">
+                    <option value="all">All</option>
+                    <option value="north">North</option>
+                    <option value="south">South</option>
+                    <option value="east">East</option>
+                    <option value="west">West</option>
+                </select>
+
+                <label for="crop-type">Crop Type:</label>
+                <select id="crop-type">
+                    <option value="all">All</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="rice">Rice</option>
+                    <option value="corn">Corn</option>
+                    <option value="vegetables">Vegetables</option>
+                </select>
+
+                <label for="price-range">Weight</label>
+                <input type="text" id="price-range" placeholder="Quantity">
+
+                <input type="button" value="Search" onclick="filterBuyers()">
+            </form>
+        </div>
+    </section>
+
+    <section id="recommendations">
+        <h2>Recommendations</h2>
+        <div class="recommendation-list">
+            <div class="buyer-card">
+                <img src="buyer1.jpg" alt="Alexander">
+                <div class="buyer-info">
+                    <h3>Alexander</h3>
+                    <p>Location: North</p>
+                    <p>Active Wheat buyer</p>
+                    <button>Contact</button>
+                    <button onclick="window.location.href='../contract/contract.html'">Create Contract</button>
+                    <button onclick="window.location.href='../negotiation/negotiation.html'">Negotiate Price</button>
+                    <button class="pay" onclick="payNow()">Pay Now</button>
+                </div>
+            </div>
+            <div class="buyer-card">
+                <img src="buyer2.jpg" alt="Prince">
+                <div class="buyer-info">
+                    <h3>Prince</h3>
+                    <p>Location: South</p>
+                    <p>Mass buyer of Rice</p>
+                    <button>Contact</button>
+                    <button onclick="window.location.href='../contract/contract.html'">Create Contract</button>
+                    <button onclick="window.location.href='../negotiation/negotiation.html'">Negotiate Price</button>
+                    <button class="pay"  onclick="payNow()">Pay Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="results" style="display: none;">
+        <h2>Potential Buyers</h2>
+        <div class="buyer-list" id="buyer-list">
+            <!-- Buyer cards will be dynamically updated here based on filter -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="company-contact">
+            <p>FarmWise Contact: <a href="tel:+123456789">+123456789</a></p>
+            <p>Instagram: <a href="https://instagram.com/farmwise">@farmwise</a></p>
+        </div>
+    </footer>
+
+    <script src="buy.js"></script>
+</body>
+</html>

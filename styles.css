@@ -1,0 +1,98 @@
+/* Resetting default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  background-image: url('back2.jpg'); /* Replace with your actual image */
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  background-position: center center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the image fixed during scrolling */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.welcome-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%; /* Adjusted for mobile screen */
+  max-width: 400px; /* Prevent too large on bigger screens */
+}
+
+.welcome-box h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.welcome-box span {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.quote {
+  font-size: 1em;
+  font-style: italic;
+  color: #555;
+}
+
+.auth-box {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  max-width: 300px;
+}
+
+.auth-button {
+  background-color: #27ae60;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: #2ecc71;
+}
+
+/* Media Queries for Infinix Hot 30i and smaller screens */
+@media (max-width: 720px) {
+  .welcome-box h1 {
+      font-size: 1.8em;
+  }
+
+  .welcome-box {
+      padding: 15px;
+      width: 95%;
+  }
+
+  .quote {
+      font-size: 0.9em;
+  }
+
+  .auth-box {
+      width: 80%;
+  }
+}
