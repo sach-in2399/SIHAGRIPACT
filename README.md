@@ -1,6 +1,5 @@
 # SIHAGRIPACT
 ## Assured Contract Farming System for Stable Market Access
-<!-- # Integrating In-App Advertising and In-App Purchase Plugins for GovtInvoice -->
 
 ## Team Details
 
@@ -19,7 +18,7 @@
 
 ## Project Links
 - *Video Demonstration:* [Watch Video](https://youtu.be/elRUSWMcm7Y?si=qqB3ArpTQoVUy_PD)
-- *Live Deployment:* [View Deployment](https://sih-2024-r2.vercel.app/)
+- *Live Deployment:* [View Deployment](https://sih2024agripact.netlify.app/)
 - *Source Code:* [GitHub Repository](https://github.com/sach-in2399/SIHAGRIPACT)
 
 ## Local Setup Instructions (Write for both windows and macos)

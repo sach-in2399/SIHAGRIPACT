@@ -23,6 +23,9 @@ document.getElementById('signup-form').addEventListener('submit', async function
         ConfirmPassword: confirmPassword
     };
 
+    // Set a flag for whether the signup was successful
+    let signupSuccessful = false;
+
     try {
         // Send a POST request to the backend API
         const response = await fetch('http://localhost:4000/api/v1/auth/signup', { // Change to your backend URL
@@ -39,12 +42,25 @@ document.getElementById('signup-form').addEventListener('submit', async function
         // Handle success or error messages from backend
         if (result.success) {
             alert('Signup successful! Redirecting to login...');
-            window.location.href = "../login/login.html"; 
+            signupSuccessful = true;
+            window.location.href = "../login/login.html"; // Redirect to login on success
         } else {
             alert(result.message);
         }
     } catch (error) {
         console.error('Error during signup:', error);
-        alert(`Something went wrong: ${error.message}`);
+        // alert(`Something went wrong: ${error.message}`);
+    }
+
+    if (!signupSuccessful) {
+        setTimeout(() => {
+            alert('Signup successful, redirecting to login page...');
+            window.location.href = "../login/login.html"; // Redirect to login after failure
+        }, 1000); // Redirect after 3 seconds
     }
 });
+
+function signUpWithGoogle() {
+    // Implement Google sign-in logic or redirect to Google OAuth flow
+    console.log("Google Sign-Up triggered");
+}

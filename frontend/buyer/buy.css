@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #eedb9da4;;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #09a349;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Search Section */
+#search-section {
+  padding: 20px;
+  background-color: #eedb9da4;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+#search {
+  padding: 10px;
+  width: 100%;
+  max-width: 600px; /* Limit max width on larger screens */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filters {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #97e99b;
+  border-radius: 10px;
+}
+
+.filters form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filters label,
+.filters select,
+.filters input {
+  margin-bottom: 10px;
+  flex: 1 1 100%; /* Full width on mobile */
+}
+
+input[type="text"],
+select {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Results Section */
+#results {
+  padding: 20px;
+}
+
+.buyer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.buyer-card {
+  background-color: #eedb9da4;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%; /* Full width for mobile */
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Stack items on mobile */
+}
+
+.buyer-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px; /* Adjust margin */
+}
+
+.buyer-info {
+  text-align: center; /* Center on smaller screens */
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Recommendations Section */
+#recommendations {
+  background-color: #eedb9da4;
+  padding: 20px;
+}
+
+.recommendation-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure wrapping on mobile */
+}
+
+.recommendation-card {
+  background-color: #f5f5dc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%; /* Full width on mobile */
+  text-align: center; /* Center the text */
+}
+
+/* Footer */
+footer {
+  padding: 15px;
+  background-color: #005f23;
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .filters form {
+    flex-direction: row; /* Side by side on larger screens */
+  }
+
+  .filters label,
+  .filters select,
+  .filters input {
+    flex: 1 1 calc(30% - 10px); /* 3 items per row */
+  }
+
+  .buyer-card {
+    flex-direction: row; /* Side by side on larger screens */
+    max-width: 48%;
+  }
+
+  .recommendation-card {
+    max-width: 48%; /* Two per row on larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .buyer-list {
+    gap: 30px;
+  }
+
+  .recommendation-list {
+    gap: 30px;
+  }
+}
+
+/* Add CSS for new buttons */
+button {
+  background-color: #28a745;
+  color: rgb(227, 227, 227);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  display: inline-block;
+  margin-right: 5px; /* Space between buttons */
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.buyer-card {
+  background-color: #f5f5dc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pay {
+  background-color: rgba(35, 79, 241, 0.765);
+}
