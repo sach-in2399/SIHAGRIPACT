@@ -42,7 +42,7 @@ header {
 .filters {
   margin-top: 20px;
   padding: 15px;
-  background-color: #97e99b;
+  background-color: #f5d48d;
   border-radius: 10px;
 }
 
@@ -229,3 +229,25 @@ button:hover {
 .pay {
   background-color: rgba(35, 79, 241, 0.765);
 }
+
+.back-arrow {
+  display: inline-block;
+  font-size: 42px;  /* Increase font size for a bolder arrow */
+  color: black;     /* Bold black color */
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute; /* Position it relative to the page */
+  top: 10px;         /* Make it closer to the top */
+  left: 20px;        /* Keep it at 20px from the left */
+  margin: 0;
+  font-weight: bolder;
+}
+
+.back-arrow:hover {
+  color: black;      /* Keep color black on hover */
+}
+
+
+
+
+

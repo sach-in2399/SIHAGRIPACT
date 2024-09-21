@@ -64,11 +64,6 @@
      padding: 0.5rem 0;
    }
    
-   .discover-discounts {
-     padding: 1rem;
-     text-align: center;
-   }
-   
    input[type="text"] {
      padding: 0.7rem;
      width: 70%;
@@ -89,7 +84,6 @@
      background-color: #45a049;
    }
    
-   /* Responsive Design */
    @media (max-width: 768px) {
      .chat-options {
        flex-direction: column;
@@ -109,4 +103,72 @@
        width: 80%;
      }
    }
+
+   .discover-discounts {
+    padding: 1rem;
+    text-align: center;
+    margin-right: 50px;
+  }
    
+  .discover-discounts {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .query-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between the input and button */
+    margin-top: 1rem;
+  }
+  
+  input[type="text"] {
+    padding: 0.7rem;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 0.7rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    input[type="text"] {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    input[type="text"] {
+      width: 90%; /* Further adjust width for very small screens */
+    }
+  }
+
+  .back-arrow {
+    display: inline-block;
+    font-size: 42px;  /* Increase font size for a bolder arrow */
+    color: black;     /* Bold black color */
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute; /* Position it relative to the page */
+    top: 10px;         /* Make it closer to the top */
+    left: 20px;        /* Keep it at 20px from the left */
+    margin: 0;
+    font-weight: bolder;
+  }
+  
+  .back-arrow:hover {
+    color: black;      /* Keep color black on hover */
+  }
+  

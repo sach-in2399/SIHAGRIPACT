@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <a href="javascript:void(0);" onclick="goBack()" class="back-arrow">←</a>
     <h1>Farmer Assist</h1>
     <p>Your guide for stable farming income</p>
   </header>
@@ -20,6 +21,14 @@
     </div>
   </section>
 
+  <section class="discover-discounts">
+    <h2>Ask Your Queries</h2>
+    <div class="query-container">
+      <input type="text" placeholder="Search...">
+      <button onclick="window.location.href='https://balram-2.onrender.com/'">Find</button>
+    </div>
+  </section>  
+
   <section class="trending-questions">
     <h2>Trending Questions</h2>
     <ul>
@@ -30,12 +39,10 @@
       <li>How to start millet farming?</li>
     </ul>
   </section>
-
-  <section class="discover-discounts">
-    <h2>Ask Your Queries</h2>
-    <input type="text" placeholder="Search...">
-    <button onclick="window.location.href='https://balram-2.onrender.com/'">Find</button>
-  </section>
-
+  <script>
+    function goBack() {
+    window.history.back();
+}
+  </script>
 </body>
 </html>

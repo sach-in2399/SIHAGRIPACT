@@ -118,3 +118,7 @@ function payNow() {
     window.location.href = 'https://www.phonepe.com/how-to-pay/pay-by-phonepe/android/'; // Paytm payment link here
 }
 
+function goBack() {
+    window.history.back();
+}
+
