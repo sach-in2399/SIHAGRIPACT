@@ -5,16 +5,29 @@ document.getElementById('wheat-form').addEventListener('submit', function(event)
     const soilMoisture = document.getElementById('soil-moisture').value;
     const pesticides = document.getElementById('pesticides').value;
 
-    let feedbackMessage = 'Your yield will be good this season.';
+    var optimalPh = true; 
+    var optimalMoisture = true; 
+    var optimalPesticide = true; 
 
-    if (soilPh === '<5.5 or >8.0') {
-        feedbackMessage += ' Tips to improve: Adjust soil pH for optimal growth.';
+    if (soilPh === '<5.5 or >8.0') optimalPh = false;
+    if (soilMoisture === '<30% or >80%') optimalMoisture = false;
+    if (pesticides === 'Other') optimalPesticide = false; 
+
+    let feedbackMessage = '';
+    if (optimalPh && optimalMoisture && optimalPesticide) {
+        feedbackMessage = 'Your yield will be good this season.';
     }
-    if (soilMoisture === '<30% or >80%') {
-        feedbackMessage += ' Tips to improve: Improve soil moisture for better results.';
-    }
-    if (pesticides === 'Other') {
-        feedbackMessage += ' Tips to improve: Consider using recommended wheat pesticides for better yield.';
+    else {
+        feedbackMessage = 'To ensure good yield please follow the following steps:\n';
+        if (!optimalPh) {
+            feedbackMessage += 'Adjust soil pH.\n';
+        }
+        if (!optimalMoisture) {
+            feedbackMessage += 'Improve soil moisture.\n';
+        }
+        if (!optimalPesticide) {
+            feedbackMessage += 'Consider using recommended pesticides.\n';
+        }
     }
 
     document.getElementById('feedback-message').innerText = feedbackMessage;
