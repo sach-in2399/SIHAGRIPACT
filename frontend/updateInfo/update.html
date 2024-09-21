@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Info</title>
+    <link rel="stylesheet" href="update.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="../Dashboard/dashboard.html"><img style="height: 30px; width: 30px;" src="home.webp" alt="Home" class="icon"></a>
+    <img style="height: 30px; width: 30px;" src="notification.jpg" alt="Notification" class="icon">
+</div>
+
+  <!-- topbar -->
+    <div class="update-info-container">
+        <img id="user-dp" src="prof2.jpg" alt="User DP" class="profile-pic">
+        <p class="email">kamala@gmail.com</p>
+
+        <button class="btn" id="update-address-btn">Update Address</button>
+        <div class="form-container" id="address-form">
+            <input type="text" id="address" name="address" placeholder="Enter new address" class="form-input">
+            <button class="btn" id="save-address-btn">Save Address</button>
+        </div>
+
+        <button class="btn" id="change-password-btn">Change Password</button>
+        <div class="form-container" id="password-form">
+            <input type="password" id="new-password" name="new-password" placeholder="Enter new password" class="form-input">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password" class="form-input">
+            <button class="btn" id="save-password-btn">Save Password</button>
+        </div>
+    </div>
+
+   
+    <script src="update.js"></script>
+</body>
+</html>
+

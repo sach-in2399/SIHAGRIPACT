@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #09a349;
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.update-info-container {
+  margin-top: 100px;
+  background-color: #fff9c4; /* Light yellow background */
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.update-info-container:hover {
+  transform: translateY(-10px); /* Y-axis transition effect */
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.email {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.btn {
+  background-color: #27ae60; /* Light green button */
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+  font-size: 1.1em;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2ecc71; /* Slightly darker green on hover */
+}
+
+.form-container {
+  display: none;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Infinix Hot 30i (width: 720px) */
+@media (max-width: 720px) {
+  .update-info-container {
+      width: 95%;
+      padding: 15px;
+  }
+
+  .btn {
+      width: 90%;
+  }
+
+  .form-input {
+      width: 90%;
+  }
+}
