@@ -65,6 +65,7 @@ const buyers = [
  ];
  
  function filterBuyers() {
+    const searchName = document.getElementById('search').value;
     const location = document.getElementById('location').value;
     const crop = document.getElementById('crop-type').value;
     const buyerListContainer = document.getElementById('buyer-list');
@@ -76,9 +77,10 @@ const buyers = [
 
     // Filter the buyers based on selected location and crop type
     const filteredBuyers = buyers.filter(buyer => {
+        const nameMatch = searchName === '' || buyer.name.toUpperCase().match(searchName.toUpperCase());
         const locationMatch = location === 'all' || buyer.location === location;
         const cropMatch = crop === 'all' || buyer.crop === crop;
-        return locationMatch && cropMatch;
+        return locationMatch && cropMatch && nameMatch;
     });
 
     // Hide the recommendations section
