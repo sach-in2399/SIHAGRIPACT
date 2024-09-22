@@ -35,56 +35,8 @@
     </form>
 </div>
 
-<script>
-    document.getElementById("contract-form").addEventListener("submit", async function(event) {
-        event.preventDefault();
-
-        // Create a FormData object to hold the form data
-        const formData = new FormData();
-
-        // Get form data and append it to the FormData object
-        const CropType = document.getElementById("crop").value;
-        const Quantity = document.getElementById("quantity").value;
-        const DeliveryDate = document.getElementById("delivery-date").value;
-        const PricePerKg = document.getElementById("price").value;
-        const TermsAndCondition = document.getElementById("terms").value;
-
-        // Append the form data to FormData object
-        formData.append('cropType', CropType);
-        formData.append('quantity', Quantity);
-        formData.append('deliveryDate', DeliveryDate);
-        formData.append('pricePerKg', PricePerKg);
-        formData.append('terms', TermsAndCondition);
-        alert("Creation of contract is successfull");
-
-        // If you have a token stored in localStorage, append it as well
-        // const token = localStorage.getItem('token');
-        // if (token) {
-        //     formData.append('token', token);
-        // }
-
-        // try {
-        //     // Make POST request to the backend API with FormData
-        //     const response = await fetch('http://localhost:4000/api/v1/BuyerMatch/createContracts', {
-        //         method: 'POST',
-        //         body: formData // Sending FormData directly
-        //     });
-
-        //     console.log("what is the response",response);
-
-        //     // Parse the response
-        //     const result = await response.json();
-        //     if (result.success) {
-        //         alert("Contract created successfully!");
-        //     } else {
-        //         alert("Error creating contract: " + result.message);
-        //     }
-        // } catch (error) {
-        //     console.error("Error:", error);
-        //     alert("Failed to create contract. Please try again.");
-        // }
-    });
-</script>
+<!-- Link to external JavaScript file -->
+<script src="contract.js"></script>
 
 </body>
 </html>

@@ -21,6 +21,9 @@ const UserSchema = new mongoose.Schema({
     ConfirmPassword:{
         type:String
     },
+    Address:{
+        type:String,
+    },
     ContractsForm:[
         {
             type:mongoose.Schema.Types.ObjectId,

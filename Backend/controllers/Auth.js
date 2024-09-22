@@ -5,7 +5,7 @@ require("dotenv").config();
 
 exports.signup = async(req,res)=>{
     try{
-        const {Username , Email, PhoneNumber, Password, ConfirmPassword } = req.body;
+        const {Username , Email, PhoneNumber, Password, ConfirmPassword , Address} = req.body;
         if(!Username || !Email ||!PhoneNumber ||!Password 
                                               ||!ConfirmPassword
         ){
@@ -36,7 +36,8 @@ exports.signup = async(req,res)=>{
            Username,
            Email,
            Password:hashedPassword,
-           PhoneNumber 
+           PhoneNumber,
+           Address:null
         });
 
         return res.status(200).json({
@@ -105,6 +106,13 @@ exports.signin = async(req,res)=>{
       });
 
     
+    }else{
+      // console.log(error);
+      return res.status(400).json({
+        success:false,
+        message:"Incorrect password",
+        // error:error.message
+      });
     }
    }
    catch(error){
@@ -115,4 +123,23 @@ exports.signin = async(req,res)=>{
     error:error.message
      });
     }
+};
+
+exports.logout = async (req, res) => {
+  try {
+      // Clear the token from cookies
+      res.clearCookie("token");
+
+      return res.status(200).json({
+          success: true,
+          message: "User logged out successfully"
+      });
+  } catch (error) {
+      console.log(error);
+      return res.status(500).json({
+          success: false,
+          message: "Failed to log out, please try again later",
+          error: error.message
+      });
+  }
 };

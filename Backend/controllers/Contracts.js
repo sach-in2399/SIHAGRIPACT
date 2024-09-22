@@ -36,7 +36,8 @@ exports.createContracts = async(req,res)=>{
         PricePerKg,
         TermsAndConditions
       });
-
+      
+      console.log("ye  llloooooooo" , contract);
       const updateUser = await User.findByIdAndUpdate(userId,
          {
             $push:{

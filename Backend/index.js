@@ -4,6 +4,7 @@ const app = express();
 const userRoutes = require("./routes/User");
 const negotiateRoutes = require("./routes/Negotiate");
 const contractRoutes = require("./routes/Contracts");
+const updateInfoRoutes = require("./routes/updateInfo");
 
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
@@ -28,6 +29,7 @@ app.use(
 app.use("/api/v1/auth" , userRoutes);
 app.use("/api/v1/BuyerMatch" , negotiateRoutes);
 app.use("/api/v1/BuyerMatch" , contractRoutes);
+app.use("/api/v1/UpdateInfo", updateInfoRoutes);
 
 app.get("/" , (req,res)=>{
     return res.json({

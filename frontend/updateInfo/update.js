@@ -48,16 +48,75 @@ saveAddressBtn.addEventListener('click', () => {
 });
 
 // Save the new password and hide the form
-savePasswordBtn.addEventListener('click', () => {
+// Save the address and hide the form
+saveAddressBtn.addEventListener('click', async () => {
+    const address = addressInput.value;
+
+    if (address) {
+        try {
+            // Send the address to the server for updating
+            const token = localStorage.getItem('token'); // Assume token is stored in localStorage
+
+            const response = await fetch('http://localhost:4000/api/v1/UpdateInfo/updateAddress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Add token for authentication
+                },
+                body: JSON.stringify({ Address: address })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Address updated successfully!');
+                // Hide the address form after saving
+                addressForm.style.display = 'none';
+            } else {
+                alert(`Error: ${result.message}`);
+            }
+        } catch (error) {
+            console.error('Error updating address:', error);
+            alert('There was an error updating the address. Please try again.');
+        }
+    } else {
+        alert('Please enter a valid address.');
+    }
+});
+
+// Save the new password and hide the form
+savePasswordBtn.addEventListener('click', async () => {
     const newPassword = newPasswordInput.value;
     const confirmPassword = confirmPasswordInput.value;
 
     if (newPassword && confirmPassword) {
         if (newPassword === confirmPassword) {
-            localStorage.setItem('password', newPassword);
-            alert('Password updated successfully!');
-            // Hide the password form after saving
-            passwordForm.style.display = 'none';
+            try {
+                const token = localStorage.getItem('token'); // Assume token is stored in localStorage
+
+                // Send the password to the server for updating
+                const response = await fetch('http://localhost:4000/api/v1/user/changePassword', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` // Add token for authentication
+                    },
+                    body: JSON.stringify({ newPassword })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Password updated successfully!');
+                    // Hide the password form after saving
+                    passwordForm.style.display = 'none';
+                } else {
+                    alert(`Error: ${result.message}`);
+                }
+            } catch (error) {
+                console.error('Error updating password:', error);
+                alert('There was an error updating the password. Please try again.');
+            }
         } else {
             alert('Passwords do not match. Please try again.');
         }
@@ -65,6 +124,7 @@ savePasswordBtn.addEventListener('click', () => {
         alert('Please fill out both password fields.');
     }
 });
+
 
 // On page load, fetch stored data (if any) and update the profile info
 window.addEventListener('load', () => {
