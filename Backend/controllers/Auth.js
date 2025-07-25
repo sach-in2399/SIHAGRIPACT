@@ -5,7 +5,7 @@ require("dotenv").config();
 
 exports.signup = async(req,res)=>{
     try{
-        const {Username , Email, PhoneNumber, Password, ConfirmPassword , Address} = req.body;
+        const {Username , Email, PhoneNumber, Password, ConfirmPassword} = req.body;
         if(!Username || !Email ||!PhoneNumber ||!Password 
                                               ||!ConfirmPassword
         ){
@@ -14,6 +14,10 @@ exports.signup = async(req,res)=>{
             message:"All fields required"
           });
         }
+
+        // console.log(Username);
+        // console.log("Received signup request body:", req.body);
+
 
         if(Password !== ConfirmPassword){
           return res.status(400).json({
@@ -36,8 +40,7 @@ exports.signup = async(req,res)=>{
            Username,
            Email,
            Password:hashedPassword,
-           PhoneNumber,
-           Address:null
+           PhoneNumber
         });
 
         return res.status(200).json({
